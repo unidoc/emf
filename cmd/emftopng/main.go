@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/pzinovkin/emf"
+	"github.com/unidoc/emf"
 )
 
 const VERSION = "0.2.0"
@@ -78,7 +78,6 @@ func main() {
 			errlog.Fatal(err)
 		}
 		defer f.(*os.File).Close()
-
 	} else {
 		f = os.Stdout
 	}

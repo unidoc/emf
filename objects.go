@@ -208,8 +208,12 @@ type RectL struct {
 	Left, Top, Right, Bottom int32
 }
 
-func (r RectL) Width() int32  { return r.Right - r.Left }
-func (r RectL) Height() int32 { return r.Bottom - r.Top }
+func (r RectL) Width() int32 {
+	return r.Right - r.Left
+}
+func (r RectL) Height() int32 {
+	return r.Bottom - r.Top
+}
 
 func (r RectL) Center() PointL {
 	return PointL{
