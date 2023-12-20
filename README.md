@@ -15,3 +15,8 @@ Calling by passing file path as an argument will generate image in the folder ne
 Also supports stdin. Image will be written to stdout.
 
     emftopng < image.emf > image.png
+
+## Credits
+
+Credits to [github.com/pzinovkin/emf](github.com/pzinovkin/emf) for the awesome work of this emf package.
+Removed the `vendor` folder to make it work with go modules import.

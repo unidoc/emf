@@ -998,7 +998,6 @@ func (r *Polyline16Record) Draw(ctx *context) {
 	for i := 1; i < int(r.Count); i++ {
 		ctx.LineTo(float64(r.aPoints[i].X), float64(r.aPoints[i].Y))
 	}
-	// ctx.Stroke()
 }
 
 type Polybezierto16Record struct {

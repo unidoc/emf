@@ -83,7 +83,6 @@ func (ctx context) applyTransformation() {
 }
 
 func (f *EmfFile) Draw() image.Image {
-
 	bounds := f.Header.Bounds
 
 	// inclusive-inclusive bounds
