@@ -9,7 +9,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/disintegration/imaging"
+	xdraw "golang.org/x/image/draw"
 )
 
 type bitmapRecord struct {
@@ -252,7 +252,9 @@ func (r *bitmapRecord) Draw(ctx *context) {
 	// Call scaling only if image size is bigger than record bounds because
 	// this procedure is very expensive.
 	if img.Bounds().Dx() > rect.Dx()+1 && img.Bounds().Dy() > rect.Dy()+1 {
-		img = imaging.Resize(img, rect.Dx(), rect.Dy(), imaging.CatmullRom)
+		dst := image.NewRGBA(image.Rect(0, 0, rect.Dx(), rect.Dy()))
+		xdraw.CatmullRom.Scale(dst, dst.Bounds(), img, img.Bounds(), xdraw.Over, nil)
+		img = dst
 	}
 
 	draw.Draw(ctx.img, rect, img, image.Point{}, draw.Over)
